@@ -21,7 +21,7 @@ func NewWeatherController(
 }
 
 func (wc *WeatherController) Route() {
-	wc.router.Route("/weather", func(r chi.Router) {
+	wc.router.Route("/", func(r chi.Router) {
 		r.Get("/", wc.weatherHandler.GetWeather)
 	})
 }
