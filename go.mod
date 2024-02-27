@@ -6,6 +6,7 @@ require (
 	github.com/go-chi/chi/v5 v5.0.12
 	github.com/go-chi/cors v1.2.1
 	github.com/goccy/go-json v0.10.2
+	github.com/golang/mock v1.6.0
 	github.com/spf13/viper v1.18.2
 	github.com/stretchr/testify v1.8.4
 )
