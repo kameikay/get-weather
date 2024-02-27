@@ -35,7 +35,7 @@ func (suite *GetTemperaturesUseCaseSuite) SetupTest() {
 }
 
 func (suite *GetTemperaturesUseCaseSuite) TestNewGetCEPDataUseCase() {
-	useCase := NewGetCEPDataUseCase(suite.viaCepService, suite.weatherApiService)
+	useCase := NewGetTemperatureUseCase(suite.viaCepService, suite.weatherApiService)
 	suite.NotNil(useCase)
 }
 
@@ -96,7 +96,7 @@ func (suite *GetTemperaturesUseCaseSuite) TestExecute() {
 	for _, tc := range testCases {
 		suite.T().Run(tc.name, func(t *testing.T) {
 			tc.expectations(suite.viaCepService, suite.weatherApiService)
-			useCase := NewGetCEPDataUseCase(suite.viaCepService, suite.weatherApiService)
+			useCase := NewGetTemperatureUseCase(suite.viaCepService, suite.weatherApiService)
 			res, err := useCase.Execute(suite.ctx, tc.cep)
 			suite.Equal(tc.expectedResp, res)
 			suite.Equal(tc.expectedErr, err)

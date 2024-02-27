@@ -21,7 +21,7 @@ type Response struct {
 	TempK float64 `json:"temp_K"`
 }
 
-func NewGetCEPDataUseCase(
+func NewGetTemperatureUseCase(
 	viaCepService service.ViaCepServiceInterface,
 	weatherApiService service.WeatherApiServiceInterface,
 ) *GetTemperaturesUseCase {
