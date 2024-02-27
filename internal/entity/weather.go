@@ -1,9 +1,10 @@
 package entity
 
 import (
-	"errors"
 	"regexp"
 	"strings"
+
+	"github.com/kameikay/get-weather/pkg/exceptions"
 )
 
 type Weather struct {
@@ -31,12 +32,12 @@ func (w *Weather) FormatCEP() (string, error) {
 	}
 
 	if len(w.Cep) > 9 {
-		return "", errors.New("invalid cep")
+		return "", exceptions.ErrInvalidCEP
 	}
 
 	if len(w.Cep) == 8 && !strings.Contains(w.Cep, "-") {
 		return w.Cep[:5] + "-" + w.Cep[5:], nil
 	}
 
-	return "", errors.New("invalid cep")
+	return "", exceptions.ErrInvalidCEP
 }

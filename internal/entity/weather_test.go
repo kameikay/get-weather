@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"errors"
 	"testing"
 
+	"github.com/kameikay/get-weather/pkg/exceptions"
 	"github.com/stretchr/testify/suite"
 )
 
@@ -44,13 +44,13 @@ func (suite *WeatherTestSuite) TestWeatherFormatCEP() {
 			name:     "should return error, when cep is invalid",
 			cep:      "123456789",
 			expected: "",
-			err:      errors.New("invalid cep"),
+			err:      exceptions.ErrInvalidCEP,
 		},
 		{
 			name:     "should return error, when cep is invalid",
 			cep:      "1234-56781",
 			expected: "",
-			err:      errors.New("invalid cep"),
+			err:      exceptions.ErrInvalidCEP,
 		},
 	}
 
