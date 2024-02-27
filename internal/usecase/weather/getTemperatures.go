@@ -11,6 +11,10 @@ type GetTemperaturesUseCase struct {
 	weatherApiService service.WeatherApiServiceInterface
 }
 
+type GetTemperaturesUseCaseInterface interface {
+	Execute(ctx context.Context, cep string) (Response, error)
+}
+
 type Response struct {
 	TempC float64 `json:"temp_C"`
 	TempF float64 `json:"temp_F"`
