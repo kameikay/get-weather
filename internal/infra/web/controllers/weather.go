@@ -5,23 +5,23 @@ import (
 	"github.com/kameikay/get-weather/internal/infra/web/handlers"
 )
 
-type WeatherController struct {
-	router         chi.Router
-	weatherHandler *handlers.WeatherHandler
+type Controller struct {
+	router  chi.Router
+	Handler *handlers.Handler
 }
 
-func NewWeatherController(
+func NewController(
 	router chi.Router,
-	weatherHandler *handlers.WeatherHandler,
-) *WeatherController {
-	return &WeatherController{
-		router:         router,
-		weatherHandler: weatherHandler,
+	Handler *handlers.Handler,
+) *Controller {
+	return &Controller{
+		router:  router,
+		Handler: Handler,
 	}
 }
 
-func (wc *WeatherController) Route() {
+func (wc *Controller) Route() {
 	wc.router.Route("/", func(r chi.Router) {
-		r.Get("/", wc.weatherHandler.GetWeather)
+		r.Get("/", wc.Handler.GetTemperatures)
 	})
 }
