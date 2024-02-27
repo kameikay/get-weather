@@ -47,7 +47,7 @@ func (h *Handler) GetTemperatures(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	getTemperaturesUseCase := usecase.NewGetCEPDataUseCase(h.viaCepService, h.weatherApiService)
+	getTemperaturesUseCase := usecase.NewGetTemperatureUseCase(h.viaCepService, h.weatherApiService)
 	data, err := getTemperaturesUseCase.Execute(r.Context(), cep)
 	if err != nil {
 		if err == exceptions.ErrInvalidCEP {
