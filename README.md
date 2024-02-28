@@ -67,6 +67,18 @@ http://localhost:8080/?cep={zipCode}
 ```
 Replace `{zipCode}` with the desired zip code.
 
+### Running via docker-file
+
+1. Run the following command to start the application:
+```bash
+docker-compose up
+```
+2. Access the following URL in your browser or using an API client (such as Postman):
+```bash
+http://localhost:8080/?cep={zipCode}
+```
+Replace `{zipCode}` with the desired zip code.
+
 ### Running the tests
 
 1. Run the following command to start the tests:
