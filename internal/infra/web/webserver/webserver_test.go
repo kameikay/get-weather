@@ -10,12 +10,12 @@ import (
 )
 
 func TestNewWebServer(t *testing.T) {
-	webserver := NewWebServer(":3333")
+	webserver := NewWebServer(":8080")
 	assert.NotNil(t, webserver)
 }
 
 func TestMountMiddlewares(t *testing.T) {
-	webserver := NewWebServer(":3333")
+	webserver := NewWebServer(":8080")
 	webserver.MountMiddlewares()
 
 	router := chi.NewRouter()

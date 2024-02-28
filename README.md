@@ -47,7 +47,7 @@ go run main.go
 ```
 3. Access the following URL in your browser or using an API client (such as Postman):
 ```bash
-http://localhost:3333/?cep={zipCode}
+http://localhost:8080/?cep={zipCode}
 ```
 Replace `{zipCode}` with the desired zip code.
 
@@ -59,11 +59,11 @@ docker build -t get-temperature-by-zip-code .
 ```
 2. Run the following command to start the application:
 ```bash
-docker run -p 3333:3333 get-temperature-by-zip-code
+docker run -p 8080:8080 get-temperature-by-zip-code
 ```
 3. Access the following URL in your browser or using an API client (such as Postman):
 ```bash
-http://localhost:3333/?cep={zipCode}
+http://localhost:8080/?cep={zipCode}
 ```
 Replace `{zipCode}` with the desired zip code.
 

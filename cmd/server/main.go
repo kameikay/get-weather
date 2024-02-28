@@ -13,7 +13,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	server := webserver.NewWebServer(":3333")
+	server := webserver.NewWebServer(":8080")
 
 	server.MountMiddlewares()
 
