@@ -38,6 +38,10 @@ The goal of this project is to develop a system in Go that takes a postal code a
 
 ## How to run the project
 
+### Environment Variables
+
+- `WEATHER_API_KEY`: API key for the [WeatherAPI](https://www.weatherapi.com/) service.
+
 ### Running the project locally
 
 1. Clone the repository
@@ -86,7 +90,12 @@ Replace `{zipCode}` with the desired zip code.
 go test ./...
 ```
 
-## Environment Variables
+## Google Cloud Run
 
-- `WEATHER_API_KEY`: API key for the [WeatherAPI](https://www.weatherapi.com/) service.
+This project is hosted on Google Cloud Run. You can access the application using the following URL:
 
+```bash
+https://get-weather-cl2xj3spza-uc.a.run.app/?cep={zipCode}
+```
+
+Replace `{zipCode}` with the desired zip code.
