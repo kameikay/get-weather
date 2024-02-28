@@ -50,15 +50,6 @@ func (h *Handler) GetTemperatures(w http.ResponseWriter, r *http.Request) {
 	getTemperaturesUseCase := usecase.NewGetTemperatureUseCase(h.viaCepService, h.weatherApiService)
 	data, err := getTemperaturesUseCase.Execute(r.Context(), cep)
 	if err != nil {
-		if err == exceptions.ErrInvalidCEP {
-			utils.JsonResponse(w, utils.ResponseDTO{
-				StatusCode: http.StatusUnprocessableEntity,
-				Message:    err.Error(),
-				Success:    false,
-			})
-			return
-		}
-
 		utils.JsonResponse(w, utils.ResponseDTO{
 			StatusCode: http.StatusBadRequest,
 			Message:    err.Error(),
