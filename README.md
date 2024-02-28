@@ -29,6 +29,13 @@ The goal of this project is to develop a system in Go that takes a postal code a
 - Containerization: Docker
 
 
+## Prerequisites
+
+- Go 1.16+ installed
+- Docker installed (for running the project via Docker)
+- An internet connection to access external APIs (viaCEP and WeatherAPI)
+
+
 ## How to run the project
 
 ### Running the project locally
@@ -66,3 +73,8 @@ Replace `{zipCode}` with the desired zip code.
 ```bash
 go test ./...
 ```
+
+## Environment Variables
+
+- `WEATHER_API_KEY`: API key for the [WeatherAPI](https://www.weatherapi.com/) service.
+
