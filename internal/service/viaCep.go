@@ -32,7 +32,7 @@ func NewViaCepService() *ViaCepService {
 }
 
 func (s *ViaCepService) GetCEPData(ctx context.Context, cep string) (*ViaCEPResponse, error) {
-	url := "https://viacep.com.br/ws/" + cep + "/json"
+	url := "http://viacep.com.br/ws/" + cep + "/json"
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	if err != nil {
 		return nil, err
