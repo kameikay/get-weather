@@ -4,9 +4,12 @@ import (
 	"context"
 	"encoding/json"
 	"net/http"
+
+	"github.com/kameikay/get-weather/pkg/exceptions"
 )
 
 type ViaCEPResponse struct {
+	Erro        string `json:"erro"`
 	Cep         string `json:"cep"`
 	Logradouro  string `json:"logradouro"`
 	Complemento string `json:"complemento"`
@@ -50,6 +53,11 @@ func (s *ViaCepService) GetCEPData(ctx context.Context, cep string) (*ViaCEPResp
 		if err != nil {
 			return nil, err
 		}
+
+		if viaCEPResponse.Erro == "true" {
+			return nil, exceptions.ErrCannotFindZipcode
+		}
+
 		return &viaCEPResponse, nil
 	}
 
