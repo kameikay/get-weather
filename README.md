@@ -99,3 +99,10 @@ https://get-weather-cl2xj3spza-uc.a.run.app/?cep={zipCode}
 ```
 
 Replace `{zipCode}` with the desired zip code.
+
+## Some CEPs for testing
+
+- 11010-020 (Santos/SP)
+- 13484-015 (Limeira/SP)
+- 17560-015 (Vera Cruz/SP)
+- 80220-000 (Curitiba/PR)
